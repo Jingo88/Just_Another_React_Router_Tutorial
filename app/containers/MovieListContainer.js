@@ -34,6 +34,7 @@ class MovieListContainer extends React.Component{
 
 		let movieTitle = $(event.target).find("input:text").val();
 
+		// allows us to change the URL without reloading the page. 
 		window.history.pushState('', movieTitle, "/details/" + movieTitle)
 		
 		this.setState({

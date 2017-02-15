@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MovieDetailsContainer from '../containers/MovieDetailsContainer';
+import LoadingComponent from './LoadingComponent';
 
 import { singleSearch, multiSearch} from '../helpers/helpers'; 
 
@@ -67,7 +68,7 @@ function EachMovie(props){
 function MovieList(props){
 	return (
 		props.loading === true
-			? <h1>LOADING!!!</h1>
+			? <LoadingComponent/>
 			: <div className = "container">
 					<EachMovie data = {props.moviesInfo}/>
 				</div>
