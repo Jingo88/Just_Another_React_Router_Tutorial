@@ -10,8 +10,6 @@ const styles = {
 
 function HomeComponent(props){
 
-	const {moviesFound, loading, search} = props.data;
-
 	return(
 		<div className="container" style={styles.centering}>
 			<h1>Welcome to Movie Search!</h1>

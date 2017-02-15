@@ -1,6 +1,20 @@
 import React from 'react';
 import {Link} from 'react-router';
 
+var styles = {
+	navBar: {
+		backgroundColor: "#F2EFEA",
+	},
+	fontColor: {
+		color: "#ED6A5A",
+	},
+	logo: {
+		color: "#ED6A5A",
+		fontWeight: "1.5em",
+		fontSize: "1.5em"
+	}
+}
+
 class Main extends React.Component {
 	constructor(props){
 		super(props);
@@ -8,15 +22,29 @@ class Main extends React.Component {
 	}
 	render(){
 		return(
-			<div> 
-				<nav className="nav">
-					<h1> MOAR MOVIES </h1>
-					<ul className="menu">	
-						<li><Link to='/'> Home </Link></li>
-						<li><Link to='/about'> About </Link></li>
-					</ul>
+			<div>
+				<nav>
+				  <div 
+				  	className="nav-wrapper"
+				  	style = {styles.navBar}>
+				  	<Link 
+				  		to='/'
+				  		style={styles.logo}> 
+				  		Movie Lister
+				  	</Link>
+				    
+				    <ul 
+				    	id="nav-mobile" 
+				    	className="right hide-on-med-and-down">
+
+				      <li><a href="/" style={styles.fontColor}>Home</a></li>
+				      <li><a href="/" style={styles.fontColor}>Login</a></li>
+				      <li><a href="/" style={styles.fontColor}>Register</a></li>
+				    </ul>
+				  </div>
 				</nav>
-				{this.props.children}
+	        
+				{React.cloneElement(this.props.children, this.props)}
 			</div>
 		)
 	}		

@@ -20,7 +20,6 @@ var styles = {
 }
 
 function MoviePoster(props){
-	console.log(props)
 	return props.data === "N/A"
 		? <img style={styles.posterImage} className="activator" src="http://www.nyctransitforums.com/forums/fcontent/default.png" />
 		: <img style={styles.posterImage} className="activator" src={props.data} />

@@ -8,20 +8,13 @@ import {multiSearch} from '../helpers/helpers';
 class HomeContainer extends React.Component{
   constructor(){
     super();
-    this.state = {
-			loading: false,
-			search: false,
-			movieTitle: "",
-			moviesFound: []
-		}
+    this.state = {}
 		this.handleUserSubmit = this.handleUserSubmit.bind(this)
   }
 	handleUserSubmit(event){
 		event.preventDefault();
 
 		let movieTitle = $(event.target).find("input:text").val();
-		console.log(this)
-		console.log(this.context)
 
 		browserHistory.push('/details/' + movieTitle)
 		
@@ -29,7 +22,6 @@ class HomeContainer extends React.Component{
 	render(){
 		return(
 			<HomeComponent 
-				data = {this.state}
 				onUserSubmit = {this.handleUserSubmit}/>
 		)
 	}
