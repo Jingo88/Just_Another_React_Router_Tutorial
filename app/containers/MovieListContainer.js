@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieListComponent from '../components/MovieListComponent';
-import HomeContainer from './HomeContainer';
+import HomeComponent from '../components/HomeComponent';
 
 import { singleSearch, multiSearch} from '../helpers/helpers'; 
 
@@ -12,6 +12,7 @@ class MovieListContainer extends React.Component{
 			movieInfo: {}
 		}
 		this.getMovies = this.getMovies.bind(this);
+		this.handleUserSubmit = this.handleUserSubmit.bind(this);
 	}
 	componentDidMount(){
 		this.getMovies(this.props.params.title)
@@ -28,11 +29,24 @@ class MovieListContainer extends React.Component{
 				})
 			})
 	}
+	handleUserSubmit(event){
+		event.preventDefault();
+
+		let movieTitle = $(event.target).find("input:text").val();
+
+		window.history.pushState('', movieTitle, "/details/" + movieTitle)
+		
+		this.setState({
+			loading: true
+		})
+		this.getMovies(movieTitle);
+	}
 	render(){
 		console.log(this.state);
 		return (
 			<div>
-				<HomeContainer/>
+				<HomeComponent 
+					onUserSubmit = {this.handleUserSubmit}/>
 				
 				<MovieListComponent 
 					loading = {this.state.loading}

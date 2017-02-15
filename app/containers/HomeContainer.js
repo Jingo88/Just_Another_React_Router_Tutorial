@@ -15,7 +15,6 @@ class HomeContainer extends React.Component{
 		event.preventDefault();
 
 		let movieTitle = $(event.target).find("input:text").val();
-
 		browserHistory.push('/details/' + movieTitle)
 		
 	}
