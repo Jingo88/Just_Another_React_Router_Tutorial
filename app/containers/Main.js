@@ -37,9 +37,9 @@ class Main extends React.Component {
 				    	id="nav-mobile" 
 				    	className="right hide-on-med-and-down">
 
-				      <li><a href="/" style={styles.fontColor}>Home</a></li>
-				      <li><a href="/" style={styles.fontColor}>Login</a></li>
-				      <li><a href="/" style={styles.fontColor}>Register</a></li>
+				      <li><Link to='/' style={styles.fontColor}>Home</Link></li>
+				      <li><Link to='/' style={styles.fontColor}>Login/Register</Link></li>
+				      <li><Link to='/about' style={styles.fontColor}>About</Link></li>
 				    </ul>
 				  </div>
 				</nav>
