@@ -23,6 +23,8 @@
 
 ### Branch 01 - Refactor Our Home Container
 
+* FIRST: Please install React Router
+	* `npm install --save react-router`
 * We want to plan our containers to have the logic separated by different "pages" that the router will have. 
 * The react-router will have all the containers attached to <Route> tags. 
 * We'll cover the Route tags later, first thing's first, lets create a new file called `MovieListContainer.js`
@@ -98,9 +100,17 @@ function HomeComponent(props){
 export default HomeComponent;
 ```
 
-* Great, we're not going to run `npm start` just yet
-* There's a bunch of refactoring left to do
-* Let's go to our next branch and look at how we will be seperating our logic
+* Great, we're not going to run `npm start` just yet, and go to our next branch
+* But wait, so where is everything going?
+* FIND OUT NEXT WEEK EPISODE OF DRAGONBALL Z. 
+* Okay just kidding, we still have a lot of refactoring to do. 
+* Our next branch will show us how the logic will look for our other containers
+
+***NOTE***
+
+* We imported `browserHistory` and `router` from react-router 
+* This will help us to target other routes and go to another container/page
+* We'll see how this fits later on in the tutorial.
 
 ### Branch 02 - Refactor our MovieDetailsContainer
 
@@ -112,3 +122,14 @@ export default HomeComponent;
 ### Branch 02 - Add Main Container and Router
 
 ### Branch 03 - Add About / Login / Loading
+
+
+
+
+
+
+
+
+
+
+
