@@ -2,14 +2,12 @@ import React from 'react';
 import HomeComponent from '../components/HomeComponent';
 import {browserHistory, router} from 'react-router';
 
-import {multiSearch} from '../helpers/helpers';
-
 
 class HomeContainer extends React.Component{
   constructor(){
     super();
     this.state = {}
-		this.handleUserSubmit = this.handleUserSubmit.bind(this)
+	this.handleUserSubmit = this.handleUserSubmit.bind(this)
   }
 	handleUserSubmit(event){
 		event.preventDefault();

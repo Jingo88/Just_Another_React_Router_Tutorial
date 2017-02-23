@@ -21,7 +21,93 @@
 
 ### Master Branch
 
-### Branch 01 - Refactor Movie Details. Add Movie List. Refactor Home
+### Branch 01 - Refactor Our Home Container
+
+* We want to plan our containers to have the logic separated by different "pages" that the router will have. 
+* The react-router will have all the containers attached to <Route> tags. 
+* We'll cover the Route tags later, first thing's first, lets create a new file called `MovieListContainer.js`
+* The Home Container will just be in charge of rendering the HomeComponent and handling the Users Movie Search Submission. 
+* We can remove state and the `multiSearch` helper call from our `HomeContainer`
+* We can remove the `MovieListComponent` from our `HomeComponent` 
+* The two files will look like this
+* HomeContainer.js
+
+```
+import React from 'react';
+import HomeComponent from '../components/HomeComponent';
+import {browserHistory, router} from 'react-router';
+
+
+class HomeContainer extends React.Component{
+  constructor(){
+    super();
+    this.state = {}
+	this.handleUserSubmit = this.handleUserSubmit.bind(this)
+  }
+	handleUserSubmit(event){
+		event.preventDefault();
+
+		let movieTitle = $(event.target).find("input:text").val();
+		browserHistory.push('/details/' + movieTitle)
+		
+	}
+	render(){
+		return(
+			<HomeComponent 
+				onUserSubmit = {this.handleUserSubmit}/>
+		)
+	}
+}
+
+export default HomeContainer;
+```
+* HomeComponent.js
+
+```
+import React from 'react';
+
+const styles = {
+	centering: {
+		textAlign: 'center'
+	}
+}
+
+function HomeComponent(props){
+
+	return(
+		<div className="container" style={styles.centering}>
+			<h1>Welcome to Movie Search!</h1>
+			<div className="row">
+		    <form 
+		    	className="col s10 offset-s2 m4 offset-m4"
+		    	onSubmit = {props.onUserSubmit}>
+		    	<input 
+		    		placeholder="Enter Movie or TV Show Title" 
+		    		type="text"
+		    		className="validate"/>
+		    	<input 
+		    		type="submit"
+		    		hidden/>
+		    </form>
+		  </div>
+		  
+		</div>
+	)
+}
+
+export default HomeComponent;
+```
+
+* Great, we're not going to run `npm start` just yet
+* There's a bunch of refactoring left to do
+* Let's go to our next branch and look at how we will be seperating our logic
+
+### Branch 02 - Refactor our MovieDetailsContainer
+
+
+
+
+
 
 ### Branch 02 - Add Main Container and Router
 

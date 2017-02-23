@@ -1,7 +1,5 @@
 import React from 'react';
 
-import MovieListComponent from './MovieListComponent';
-
 const styles = {
 	centering: {
 		textAlign: 'center'

@@ -1,15 +1,8 @@
 import React from 'react';
 
-var styles = {
-	centerLoad: {
-		textAlign: "center",
-		paddingTop: "5em"
-	}
-}
-
 function LoadingComponent(props){
 	return(
-		<div className="container" style = {styles.centerLoad}>
+		<div className="container">
 			
 			  <div className="preloader-wrapper big active">
 		      <div className="spinner-layer spinner-blue">
